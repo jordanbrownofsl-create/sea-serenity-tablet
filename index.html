@@ -7,7 +7,6 @@
 <title>Sea Serenity Steak House</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -138,7 +137,6 @@ h2 {
     min-height: 24px;
     font-weight: bold;
 }
-
 </style>
 </head>
 
@@ -192,15 +190,13 @@ h2 {
         Tap an item to add it to your order.
     </div>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Dinner Rolls"
         onclick="toggleItem(this)">
         Dinner Rolls
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Honey Croissant"
         onclick="toggleItem(this)">
         Honey Croissant
@@ -223,29 +219,25 @@ h2 {
         Tap an item to add it to your order.
     </div>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Chicken Salad"
         onclick="toggleItem(this)">
         Chicken Salad
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Shrimp Salad"
         onclick="toggleItem(this)">
         Shrimp Salad
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Steak Salad"
         onclick="toggleItem(this)">
         Steak Salad
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Steak and Potato Soup"
         onclick="toggleItem(this)">
         Steak and Potato Soup
@@ -268,43 +260,37 @@ h2 {
         Tap an item to add it to your order.
     </div>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Steak Meal 1"
         onclick="toggleItem(this)">
         Steak Meal 1
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Steak Meal 2"
         onclick="toggleItem(this)">
         Steak Meal 2
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Steak Meal 3"
         onclick="toggleItem(this)">
         Steak Meal 3
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Steak Meal 4"
         onclick="toggleItem(this)">
         Steak Meal 4
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Steak Meal 5"
         onclick="toggleItem(this)">
         Steak Meal 5
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Lamb Chops"
         onclick="toggleItem(this)">
         Lamb Chops
@@ -327,15 +313,13 @@ h2 {
         Tap an item to add it to your order.
     </div>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Dessert 1"
         onclick="toggleItem(this)">
         Dessert 1
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Dessert 2"
         onclick="toggleItem(this)">
         Dessert 2
@@ -358,85 +342,73 @@ h2 {
         Tap an item to add it to your order.
     </div>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Cape Cod"
         onclick="toggleItem(this)">
         Cape Cod
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Exotic Roulette"
         onclick="toggleItem(this)">
         Exotic Roulette
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Horitjo"
         onclick="toggleItem(this)">
         Horitjo
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Incredible Hulk"
         onclick="toggleItem(this)">
         Incredible Hulk
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Lemonade"
         onclick="toggleItem(this)">
         Lemonade
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Long Island"
         onclick="toggleItem(this)">
         Long Island
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Old Fashion"
         onclick="toggleItem(this)">
         Old Fashion
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Purple Rain"
         onclick="toggleItem(this)">
         Purple Rain
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Strawberry Lemon Drop"
         onclick="toggleItem(this)">
         Strawberry Lemon Drop
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Sweet Tea"
         onclick="toggleItem(this)">
         Sweet Tea
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Water"
         onclick="toggleItem(this)">
         Water
     </button>
 
-    <button
-        class="food-button"
+    <button class="food-button"
         data-item="Water / Lime"
         onclick="toggleItem(this)">
         Water / Lime
@@ -459,8 +431,7 @@ h2 {
 
     <div id="message"></div>
 
-    <button
-        class="place-order"
+    <button class="place-order"
         onclick="placeOrder()">
         ✓ PLACE ORDER
     </button>
@@ -505,7 +476,7 @@ function showPage(pageName) {
 }
 
 
-/* SELECT FOOD */
+/* ADD / REMOVE ITEM */
 
 function toggleItem(button) {
 
@@ -533,7 +504,7 @@ function toggleItem(button) {
 }
 
 
-/* CART NUMBER */
+/* CART COUNT */
 
 function updateCartCount() {
 
@@ -611,7 +582,7 @@ function clearOrder() {
 }
 
 
-/* SEND ORDER TO SECOND LIFE */
+/* SEND ORDER */
 
 function placeOrder() {
 
@@ -620,7 +591,7 @@ function placeOrder() {
     }
 
     const orderURL =
-        "https://simhost-089225617cd0ff6a4.agni.secondlife.io:12043/cap/b2d228d3-845e-0332-724b-139ad74ac1fc";
+        "https://simhost-089225617cd0ff6a4.agni.secondlife.io:12043/cap/6fc75c3f-2fed-749a-b2a6-97c931f87349";
 
     const message =
         document.getElementById('message');
