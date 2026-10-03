@@ -7,9 +7,7 @@
 <title>Sea Serenity Steak House</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -54,7 +52,7 @@ button {
     color: white;
     border: 2px solid #d9a62e;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -69,8 +67,13 @@ button:hover {
     color: black;
 }
 
-.back {
-    margin-top: 25px;
+.food-button.selected {
+    background: #d9a62e;
+    color: black;
+}
+
+.food-button.selected::after {
+    content: "  ✓ ADDED";
 }
 
 h2 {
@@ -78,20 +81,58 @@ h2 {
     font-size: 28px;
 }
 
-.item {
+.category-note {
+    color: #bbb;
+    margin-bottom: 18px;
+}
+
+.cart-count {
+    display: inline-block;
+    background: white;
+    color: black;
+    min-width: 30px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    margin-left: 8px;
+}
+
+.order-box {
+    width: 85%;
+    max-width: 600px;
+    margin: 15px auto;
+    text-align: left;
+}
+
+.order-item {
     background: #111;
     border: 1px solid #d9a62e;
     border-radius: 10px;
-    padding: 16px;
-    margin: 12px auto;
-    width: 85%;
-    max-width: 600px;
-    font-size: 21px;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 19px;
+}
+
+.empty {
+    color: #aaa;
+    font-size: 19px;
+    margin: 30px 0;
+}
+
+.place-order {
+    background: #d9a62e;
+    color: black;
+    font-size: 23px;
 }
 
 .footer {
-    color: #888;
+    color: #777;
     padding: 15px;
+}
+
+#message {
+    color: #d9a62e;
+    font-size: 18px;
+    min-height: 24px;
 }
 </style>
 </head>
@@ -103,167 +144,279 @@ h2 {
     <p>Fine Dining • Steak • Cocktails</p>
 </div>
 
-
-<!-- HOME PAGE -->
+<!-- HOME -->
 
 <div id="home" class="page active">
 
-    <button onclick="showPage('appetizers')">
-        🥐 APPETIZERS
-    </button>
+    <button onclick="showPage('appetizers')">🥐 APPETIZERS</button>
 
-    <button onclick="showPage('salads')">
-        🥗 SALAD &amp; SOUP
-    </button>
+    <button onclick="showPage('salads')">🥗 SALAD &amp; SOUP</button>
 
-    <button onclick="showPage('entrees')">
-        🥩 ENTRÉES
-    </button>
+    <button onclick="showPage('entrees')">🥩 ENTRÉES</button>
 
-    <button onclick="showPage('desserts')">
-        🍰 DESSERTS
-    </button>
+    <button onclick="showPage('desserts')">🍰 DESSERTS</button>
 
-    <button onclick="showPage('drinks')">
-        🍸 DRINKS
-    </button>
+    <button onclick="showPage('drinks')">🍸 DRINKS</button>
 
-    <button class="gold" onclick="showPage('order')">
+    <button class="gold" onclick="openOrder()">
         🛒 VIEW ORDER
+        <span id="cartCount" class="cart-count">0</span>
     </button>
 
 </div>
-
 
 <!-- APPETIZERS -->
 
 <div id="appetizers" class="page">
 
-<h2>🥐 APPETIZERS</h2>
+    <h2>🥐 APPETIZERS</h2>
+    <div class="category-note">Tap an item to add it to your order.</div>
 
-<div class="item">Dinner Rolls</div>
-<div class="item">Honey Croissant</div>
+    <button class="food-button" data-item="Dinner Rolls"
+    onclick="toggleItem(this)">Dinner Rolls</button>
 
-<button class="back" onclick="showPage('home')">
-← BACK TO MENU
-</button>
+    <button class="food-button" data-item="Honey Croissant"
+    onclick="toggleItem(this)">Honey Croissant</button>
+
+    <button onclick="showPage('home')">← BACK TO MENU</button>
 
 </div>
 
-
-<!-- SALAD AND SOUP -->
+<!-- SALAD & SOUP -->
 
 <div id="salads" class="page">
 
-<h2>🥗 SALAD &amp; SOUP</h2>
+    <h2>🥗 SALAD &amp; SOUP</h2>
+    <div class="category-note">Tap an item to add it to your order.</div>
 
-<div class="item">Chicken Salad</div>
-<div class="item">Shrimp Salad</div>
-<div class="item">Steak Salad</div>
-<div class="item">Steak and Potato Soup</div>
+    <button class="food-button" data-item="Chicken Salad"
+    onclick="toggleItem(this)">Chicken Salad</button>
 
-<button class="back" onclick="showPage('home')">
-← BACK TO MENU
-</button>
+    <button class="food-button" data-item="Shrimp Salad"
+    onclick="toggleItem(this)">Shrimp Salad</button>
+
+    <button class="food-button" data-item="Steak Salad"
+    onclick="toggleItem(this)">Steak Salad</button>
+
+    <button class="food-button" data-item="Steak and Potato Soup"
+    onclick="toggleItem(this)">Steak and Potato Soup</button>
+
+    <button onclick="showPage('home')">← BACK TO MENU</button>
 
 </div>
-
 
 <!-- ENTREES -->
 
 <div id="entrees" class="page">
 
-<h2>🥩 ENTRÉES</h2>
+    <h2>🥩 ENTRÉES</h2>
+    <div class="category-note">Tap an item to add it to your order.</div>
 
-<div class="item">Steak Meal 1</div>
-<div class="item">Steak Meal 2</div>
-<div class="item">Steak Meal 3</div>
-<div class="item">Steak Meal 4</div>
-<div class="item">Steak Meal 5</div>
-<div class="item">Lamb Chops</div>
+    <button class="food-button" data-item="Steak Meal 1"
+    onclick="toggleItem(this)">Steak Meal 1</button>
 
-<button class="back" onclick="showPage('home')">
-← BACK TO MENU
-</button>
+    <button class="food-button" data-item="Steak Meal 2"
+    onclick="toggleItem(this)">Steak Meal 2</button>
+
+    <button class="food-button" data-item="Steak Meal 3"
+    onclick="toggleItem(this)">Steak Meal 3</button>
+
+    <button class="food-button" data-item="Steak Meal 4"
+    onclick="toggleItem(this)">Steak Meal 4</button>
+
+    <button class="food-button" data-item="Steak Meal 5"
+    onclick="toggleItem(this)">Steak Meal 5</button>
+
+    <button class="food-button" data-item="Lamb Chops"
+    onclick="toggleItem(this)">Lamb Chops</button>
+
+    <button onclick="showPage('home')">← BACK TO MENU</button>
 
 </div>
-
 
 <!-- DESSERTS -->
 
 <div id="desserts" class="page">
 
-<h2>🍰 DESSERTS</h2>
+    <h2>🍰 DESSERTS</h2>
+    <div class="category-note">Tap an item to add it to your order.</div>
 
-<div class="item">Dessert 1</div>
-<div class="item">Dessert 2</div>
+    <button class="food-button" data-item="Dessert 1"
+    onclick="toggleItem(this)">Dessert 1</button>
 
-<button class="back" onclick="showPage('home')">
-← BACK TO MENU
-</button>
+    <button class="food-button" data-item="Dessert 2"
+    onclick="toggleItem(this)">Dessert 2</button>
+
+    <button onclick="showPage('home')">← BACK TO MENU</button>
 
 </div>
-
 
 <!-- DRINKS -->
 
 <div id="drinks" class="page">
 
-<h2>🍸 DRINKS</h2>
+    <h2>🍸 DRINKS</h2>
+    <div class="category-note">Tap an item to add it to your order.</div>
 
-<div class="item">Cape Cod</div>
-<div class="item">Exotic Roulette</div>
-<div class="item">Horitjo</div>
-<div class="item">Incredible Hulk</div>
-<div class="item">Lemonade</div>
-<div class="item">Long Island</div>
-<div class="item">Old Fashion</div>
-<div class="item">Purple Rain</div>
-<div class="item">Strawberry Lemon Drop</div>
-<div class="item">Sweet Tea</div>
-<div class="item">Water</div>
-<div class="item">Water / Lime</div>
+    <button class="food-button" data-item="Cape Cod"
+    onclick="toggleItem(this)">Cape Cod</button>
 
-<button class="back" onclick="showPage('home')">
-← BACK TO MENU
-</button>
+    <button class="food-button" data-item="Exotic Roulette"
+    onclick="toggleItem(this)">Exotic Roulette</button>
+
+    <button class="food-button" data-item="Horitjo"
+    onclick="toggleItem(this)">Horitjo</button>
+
+    <button class="food-button" data-item="Incredible Hulk"
+    onclick="toggleItem(this)">Incredible Hulk</button>
+
+    <button class="food-button" data-item="Lemonade"
+    onclick="toggleItem(this)">Lemonade</button>
+
+    <button class="food-button" data-item="Long Island"
+    onclick="toggleItem(this)">Long Island</button>
+
+    <button class="food-button" data-item="Old Fashion"
+    onclick="toggleItem(this)">Old Fashion</button>
+
+    <button class="food-button" data-item="Purple Rain"
+    onclick="toggleItem(this)">Purple Rain</button>
+
+    <button class="food-button" data-item="Strawberry Lemon Drop"
+    onclick="toggleItem(this)">Strawberry Lemon Drop</button>
+
+    <button class="food-button" data-item="Sweet Tea"
+    onclick="toggleItem(this)">Sweet Tea</button>
+
+    <button class="food-button" data-item="Water"
+    onclick="toggleItem(this)">Water</button>
+
+    <button class="food-button" data-item="Water / Lime"
+    onclick="toggleItem(this)">Water / Lime</button>
+
+    <button onclick="showPage('home')">← BACK TO MENU</button>
 
 </div>
-
 
 <!-- ORDER -->
 
 <div id="order" class="page">
 
-<h2>🛒 YOUR ORDER</h2>
+    <h2>🛒 YOUR ORDER</h2>
 
-<p>Your selected food will appear here.</p>
+    <div id="orderList" class="order-box"></div>
 
-<button class="back" onclick="showPage('home')">
-← BACK TO MENU
-</button>
+    <div id="message"></div>
+
+    <button class="place-order" onclick="placeOrder()">
+        ✓ PLACE ORDER
+    </button>
+
+    <button onclick="clearOrder()">
+        🗑 CLEAR ORDER
+    </button>
+
+    <button onclick="showPage('home')">
+        ← BACK TO MENU
+    </button>
 
 </div>
-
 
 <div class="footer">
-Welcome to Sea Serenity Steak House
+    Welcome to Sea Serenity Steak House
 </div>
-
 
 <script>
 
+let cart = [];
+
 function showPage(pageName) {
-
-    const pages = document.querySelectorAll('.page');
-
-    pages.forEach(function(page) {
+    document.querySelectorAll('.page').forEach(function(page) {
         page.classList.remove('active');
     });
 
     document.getElementById(pageName).classList.add('active');
-
     window.scrollTo(0, 0);
+}
+
+function toggleItem(button) {
+
+    const item = button.getAttribute('data-item');
+    const index = cart.indexOf(item);
+
+    if (index === -1) {
+        cart.push(item);
+        button.classList.add('selected');
+    } else {
+        cart.splice(index, 1);
+        button.classList.remove('selected');
+    }
+
+    updateCartCount();
+}
+
+function updateCartCount() {
+    document.getElementById('cartCount').textContent = cart.length;
+}
+
+function openOrder() {
+
+    const orderList = document.getElementById('orderList');
+    const placeButton = document.querySelector('.place-order');
+
+    orderList.innerHTML = '';
+    document.getElementById('message').textContent = '';
+
+    if (cart.length === 0) {
+
+        orderList.innerHTML =
+        '<div class="empty">Your order is currently empty.</div>';
+
+        placeButton.style.display = 'none';
+
+    } else {
+
+        placeButton.style.display = 'block';
+
+        cart.forEach(function(item) {
+
+            const div = document.createElement('div');
+            div.className = 'order-item';
+            div.textContent = '✓ ' + item;
+
+            orderList.appendChild(div);
+        });
+    }
+
+    showPage('order');
+}
+
+function clearOrder() {
+
+    cart = [];
+
+    document.querySelectorAll('.food-button').forEach(function(button) {
+        button.classList.remove('selected');
+    });
+
+    updateCartCount();
+    openOrder();
+}
+
+function placeOrder() {
+
+    if (cart.length === 0) {
+        return;
+    }
+
+    document.getElementById('message').textContent =
+    'Order ready to send to Sea Serenity staff.';
+
+    /*
+       NEXT STEP:
+       This button will communicate with the
+       Sea Serenity Second Life order receiver.
+    */
 }
 
 </script>
