@@ -7,6 +7,7 @@
 <title>Sea Serenity Steak House</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -135,7 +136,9 @@ h2 {
     color: #d9a62e;
     font-size: 18px;
     min-height: 24px;
+    font-weight: bold;
 }
+
 </style>
 </head>
 
@@ -355,73 +358,85 @@ h2 {
         Tap an item to add it to your order.
     </div>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Cape Cod"
         onclick="toggleItem(this)">
         Cape Cod
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Exotic Roulette"
         onclick="toggleItem(this)">
         Exotic Roulette
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Horitjo"
         onclick="toggleItem(this)">
         Horitjo
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Incredible Hulk"
         onclick="toggleItem(this)">
         Incredible Hulk
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Lemonade"
         onclick="toggleItem(this)">
         Lemonade
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Long Island"
         onclick="toggleItem(this)">
         Long Island
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Old Fashion"
         onclick="toggleItem(this)">
         Old Fashion
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Purple Rain"
         onclick="toggleItem(this)">
         Purple Rain
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Strawberry Lemon Drop"
         onclick="toggleItem(this)">
         Strawberry Lemon Drop
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Sweet Tea"
         onclick="toggleItem(this)">
         Sweet Tea
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Water"
         onclick="toggleItem(this)">
         Water
     </button>
 
-    <button class="food-button"
+    <button
+        class="food-button"
         data-item="Water / Lime"
         onclick="toggleItem(this)">
         Water / Lime
@@ -475,23 +490,30 @@ let cart = [];
 
 function showPage(pageName) {
 
-    document.querySelectorAll('.page').forEach(function(page) {
+    document.querySelectorAll('.page')
+    .forEach(function(page) {
+
         page.classList.remove('active');
+
     });
 
-    document.getElementById(pageName).classList.add('active');
+    document
+        .getElementById(pageName)
+        .classList.add('active');
 
     window.scrollTo(0, 0);
 }
 
 
-/* ADD OR REMOVE FOOD */
+/* SELECT FOOD */
 
 function toggleItem(button) {
 
-    const item = button.getAttribute('data-item');
+    const item =
+        button.getAttribute('data-item');
 
-    const index = cart.indexOf(item);
+    const index =
+        cart.indexOf(item);
 
     if (index === -1) {
 
@@ -504,22 +526,24 @@ function toggleItem(button) {
         cart.splice(index, 1);
 
         button.classList.remove('selected');
+
     }
 
     updateCartCount();
 }
 
 
-/* UPDATE CART NUMBER */
+/* CART NUMBER */
 
 function updateCartCount() {
 
-    document.getElementById('cartCount').textContent =
-        cart.length;
+    document
+        .getElementById('cartCount')
+        .textContent = cart.length;
 }
 
 
-/* OPEN ORDER SCREEN */
+/* VIEW ORDER */
 
 function openOrder() {
 
@@ -531,7 +555,9 @@ function openOrder() {
 
     orderList.innerHTML = '';
 
-    document.getElementById('message').textContent = '';
+    document
+        .getElementById('message')
+        .textContent = '';
 
     if (cart.length === 0) {
 
@@ -549,12 +575,16 @@ function openOrder() {
             const div =
                 document.createElement('div');
 
-            div.className = 'order-item';
+            div.className =
+                'order-item';
 
-            div.textContent = '✓ ' + item;
+            div.textContent =
+                '✓ ' + item;
 
             orderList.appendChild(div);
+
         });
+
     }
 
     showPage('order');
@@ -567,12 +597,13 @@ function clearOrder() {
 
     cart = [];
 
-    document.querySelectorAll('.food-button')
-    .forEach(function(button) {
+    document
+        .querySelectorAll('.food-button')
+        .forEach(function(button) {
 
-        button.classList.remove('selected');
+            button.classList.remove('selected');
 
-    });
+        });
 
     updateCartCount();
 
@@ -589,7 +620,7 @@ function placeOrder() {
     }
 
     const orderURL =
-        "https://simhost-089225617cd0ff6a4.agni.secondlife.io:12043/cap/fa996c2f-3a91-79d7-8328-ae86405fe208";
+        "https://simhost-089225617cd0ff6a4.agni.secondlife.io:12043/cap/b2d228d3-845e-0332-724b-139ad74ac1fc";
 
     const message =
         document.getElementById('message');
@@ -621,12 +652,13 @@ function placeOrder() {
 
         cart = [];
 
-        document.querySelectorAll('.food-button')
-        .forEach(function(button) {
+        document
+            .querySelectorAll('.food-button')
+            .forEach(function(button) {
 
-            button.classList.remove('selected');
+                button.classList.remove('selected');
 
-        });
+            });
 
         updateCartCount();
 
