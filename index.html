@@ -7,6 +7,7 @@
 <title>Sea Serenity Steak House</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -137,18 +138,30 @@ h2 {
     min-height: 24px;
     font-weight: bold;
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <div class="header">
+
     <h1>SEA SERENITY STEAK HOUSE</h1>
-    <p>Fine Dining • Steak • Cocktails</p>
+
+    <p>
+        Fine Dining • Steak • Cocktails
+    </p>
+
 </div>
 
 
+<!-- ====================================== -->
 <!-- HOME -->
+<!-- ====================================== -->
 
 <div id="home" class="page active">
 
@@ -172,35 +185,57 @@ h2 {
         🍸 DRINKS
     </button>
 
-    <button class="gold" onclick="openOrder()">
+    <button
+        class="gold"
+        onclick="openOrder()">
+
         🛒 VIEW ORDER
-        <span id="cartCount" class="cart-count">0</span>
+
+        <span
+            id="cartCount"
+            class="cart-count">
+            0
+        </span>
+
     </button>
 
 </div>
 
 
+<!-- ====================================== -->
 <!-- APPETIZERS -->
+<!-- ====================================== -->
 
 <div id="appetizers" class="page">
 
-    <h2>🥐 APPETIZERS</h2>
+    <h2>
+        🥐 APPETIZERS
+    </h2>
 
     <div class="category-note">
         Tap an item to add it to your order.
     </div>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Dinner Rolls"
         onclick="toggleItem(this)">
+
         Dinner Rolls
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Honey Croissant"
         onclick="toggleItem(this)">
+
         Honey Croissant
+
     </button>
+
 
     <button onclick="showPage('home')">
         ← BACK TO MENU
@@ -209,39 +244,60 @@ h2 {
 </div>
 
 
+<!-- ====================================== -->
 <!-- SALAD & SOUP -->
+<!-- ====================================== -->
 
 <div id="salads" class="page">
 
-    <h2>🥗 SALAD &amp; SOUP</h2>
+    <h2>
+        🥗 SALAD &amp; SOUP
+    </h2>
 
     <div class="category-note">
         Tap an item to add it to your order.
     </div>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Chicken Salad"
         onclick="toggleItem(this)">
+
         Chicken Salad
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Shrimp Salad"
         onclick="toggleItem(this)">
+
         Shrimp Salad
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Steak Salad"
         onclick="toggleItem(this)">
+
         Steak Salad
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Steak and Potato Soup"
         onclick="toggleItem(this)">
+
         Steak and Potato Soup
+
     </button>
+
 
     <button onclick="showPage('home')">
         ← BACK TO MENU
@@ -250,51 +306,80 @@ h2 {
 </div>
 
 
+<!-- ====================================== -->
 <!-- ENTREES -->
+<!-- ====================================== -->
 
 <div id="entrees" class="page">
 
-    <h2>🥩 ENTRÉES</h2>
+    <h2>
+        🥩 ENTRÉES
+    </h2>
 
     <div class="category-note">
         Tap an item to add it to your order.
     </div>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Steak Meal 1"
         onclick="toggleItem(this)">
+
         Steak Meal 1
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Steak Meal 2"
         onclick="toggleItem(this)">
+
         Steak Meal 2
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Steak Meal 3"
         onclick="toggleItem(this)">
+
         Steak Meal 3
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Steak Meal 4"
         onclick="toggleItem(this)">
+
         Steak Meal 4
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Steak Meal 5"
         onclick="toggleItem(this)">
+
         Steak Meal 5
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Lamb Chops"
         onclick="toggleItem(this)">
+
         Lamb Chops
+
     </button>
+
 
     <button onclick="showPage('home')">
         ← BACK TO MENU
@@ -303,27 +388,40 @@ h2 {
 </div>
 
 
+<!-- ====================================== -->
 <!-- DESSERTS -->
+<!-- ====================================== -->
 
 <div id="desserts" class="page">
 
-    <h2>🍰 DESSERTS</h2>
+    <h2>
+        🍰 DESSERTS
+    </h2>
 
     <div class="category-note">
         Tap an item to add it to your order.
     </div>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Dessert 1"
         onclick="toggleItem(this)">
+
         Dessert 1
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Dessert 2"
         onclick="toggleItem(this)">
+
         Dessert 2
+
     </button>
+
 
     <button onclick="showPage('home')">
         ← BACK TO MENU
@@ -332,87 +430,140 @@ h2 {
 </div>
 
 
+<!-- ====================================== -->
 <!-- DRINKS -->
+<!-- ====================================== -->
 
 <div id="drinks" class="page">
 
-    <h2>🍸 DRINKS</h2>
+    <h2>
+        🍸 DRINKS
+    </h2>
 
     <div class="category-note">
         Tap an item to add it to your order.
     </div>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Cape Cod"
         onclick="toggleItem(this)">
+
         Cape Cod
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Exotic Roulette"
         onclick="toggleItem(this)">
+
         Exotic Roulette
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Horitjo"
         onclick="toggleItem(this)">
+
         Horitjo
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Incredible Hulk"
         onclick="toggleItem(this)">
+
         Incredible Hulk
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Lemonade"
         onclick="toggleItem(this)">
+
         Lemonade
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Long Island"
         onclick="toggleItem(this)">
+
         Long Island
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Old Fashion"
         onclick="toggleItem(this)">
+
         Old Fashion
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Purple Rain"
         onclick="toggleItem(this)">
+
         Purple Rain
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Strawberry Lemon Drop"
         onclick="toggleItem(this)">
+
         Strawberry Lemon Drop
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Sweet Tea"
         onclick="toggleItem(this)">
+
         Sweet Tea
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Water"
         onclick="toggleItem(this)">
+
         Water
+
     </button>
 
-    <button class="food-button"
+
+    <button
+        class="food-button"
         data-item="Water / Lime"
         onclick="toggleItem(this)">
+
         Water / Lime
+
     </button>
+
 
     <button onclick="showPage('home')">
         ← BACK TO MENU
@@ -421,25 +572,40 @@ h2 {
 </div>
 
 
+<!-- ====================================== -->
 <!-- ORDER -->
+<!-- ====================================== -->
 
 <div id="order" class="page">
 
-    <h2>🛒 YOUR ORDER</h2>
+    <h2>
+        🛒 YOUR ORDER
+    </h2>
 
-    <div id="orderList" class="order-box"></div>
+
+    <div
+        id="orderList"
+        class="order-box">
+    </div>
+
 
     <div id="message"></div>
 
-    <button class="place-order"
+
+    <button
+        class="place-order"
         onclick="placeOrder()">
+
         ✓ PLACE ORDER
+
     </button>
+
 
     <button onclick="clearOrder()">
         🗑 CLEAR ORDER
     </button>
 
+
     <button onclick="showPage('home')">
         ← BACK TO MENU
     </button>
@@ -447,205 +613,455 @@ h2 {
 </div>
 
 
+<!-- ====================================== -->
+<!-- FOOTER -->
+<!-- ====================================== -->
+
 <div class="footer">
+
     Welcome to Sea Serenity Steak House
+
 </div>
 
 
+<!-- ====================================== -->
+<!-- JAVASCRIPT -->
+<!-- ====================================== -->
+
 <script>
+
+
+// ==========================================
+// CART
+// ==========================================
 
 let cart = [];
 
 
-/* PAGE NAVIGATION */
+// ==========================================
+// AUTOMATIC TABLET RECEIVER
+// ==========================================
+//
+// The Second Life tablet creates a URL like:
+//
+// ?receiver=https%3A%2F%2Fsimhost...
+//
+// This reads that receiver automatically.
+// NOTHING needs to be hardcoded here.
+// ==========================================
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const orderURL =
+    params.get("receiver");
+
+
+console.log(
+    "Sea Serenity Receiver:",
+    orderURL
+);
+
+
+// ==========================================
+// PAGE NAVIGATION
+// ==========================================
 
 function showPage(pageName) {
 
-    document.querySelectorAll('.page')
-    .forEach(function(page) {
+    document
+        .querySelectorAll('.page')
+        .forEach(function(page) {
 
-        page.classList.remove('active');
+            page.classList.remove(
+                'active'
+            );
 
-    });
+        });
+
 
     document
         .getElementById(pageName)
-        .classList.add('active');
+        .classList.add(
+            'active'
+        );
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(
+        0,
+        0
+    );
 }
 
 
-/* ADD / REMOVE ITEM */
+// ==========================================
+// ADD / REMOVE FOOD
+// ==========================================
 
 function toggleItem(button) {
 
     const item =
-        button.getAttribute('data-item');
+        button.getAttribute(
+            'data-item'
+        );
+
 
     const index =
         cart.indexOf(item);
+
 
     if (index === -1) {
 
         cart.push(item);
 
-        button.classList.add('selected');
-
-    } else {
-
-        cart.splice(index, 1);
-
-        button.classList.remove('selected');
+        button.classList.add(
+            'selected'
+        );
 
     }
+
+    else {
+
+        cart.splice(
+            index,
+            1
+        );
+
+        button.classList.remove(
+            'selected'
+        );
+
+    }
+
 
     updateCartCount();
 }
 
 
-/* CART COUNT */
+// ==========================================
+// CART COUNT
+// ==========================================
 
 function updateCartCount() {
 
     document
-        .getElementById('cartCount')
-        .textContent = cart.length;
+        .getElementById(
+            'cartCount'
+        )
+        .textContent =
+            cart.length;
 }
 
 
-/* VIEW ORDER */
+// ==========================================
+// VIEW ORDER
+// ==========================================
 
 function openOrder() {
 
     const orderList =
-        document.getElementById('orderList');
+        document.getElementById(
+            'orderList'
+        );
+
 
     const placeButton =
-        document.querySelector('.place-order');
+        document.querySelector(
+            '.place-order'
+        );
 
-    orderList.innerHTML = '';
+
+    orderList.innerHTML =
+        '';
+
 
     document
-        .getElementById('message')
-        .textContent = '';
+        .getElementById(
+            'message'
+        )
+        .textContent =
+            '';
+
 
     if (cart.length === 0) {
 
         orderList.innerHTML =
-            '<div class="empty">Your order is currently empty.</div>';
+            '<div class="empty">'
+            + 'Your order is currently empty.'
+            + '</div>';
 
-        placeButton.style.display = 'none';
 
-    } else {
-
-        placeButton.style.display = 'block';
-
-        cart.forEach(function(item) {
-
-            const div =
-                document.createElement('div');
-
-            div.className =
-                'order-item';
-
-            div.textContent =
-                '✓ ' + item;
-
-            orderList.appendChild(div);
-
-        });
+        placeButton.style.display =
+            'none';
 
     }
 
-    showPage('order');
+    else {
+
+        placeButton.style.display =
+            'block';
+
+
+        cart.forEach(
+            function(item) {
+
+                const div =
+                    document.createElement(
+                        'div'
+                    );
+
+
+                div.className =
+                    'order-item';
+
+
+                div.textContent =
+                    '✓ ' + item;
+
+
+                orderList.appendChild(
+                    div
+                );
+
+            }
+        );
+
+    }
+
+
+    showPage(
+        'order'
+    );
 }
 
 
-/* CLEAR ORDER */
+// ==========================================
+// CLEAR ORDER
+// ==========================================
 
 function clearOrder() {
 
     cart = [];
 
+
     document
-        .querySelectorAll('.food-button')
-        .forEach(function(button) {
+        .querySelectorAll(
+            '.food-button'
+        )
+        .forEach(
+            function(button) {
 
-            button.classList.remove('selected');
+                button.classList.remove(
+                    'selected'
+                );
 
-        });
+            }
+        );
+
 
     updateCartCount();
+
 
     openOrder();
 }
 
 
-/* SEND ORDER */
+// ==========================================
+// PLACE ORDER
+// ==========================================
 
 function placeOrder() {
 
-    if (cart.length === 0) {
+    if (
+        cart.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    const message =
+        document.getElementById(
+            'message'
+        );
+
+
+    // ======================================
+    // CHECK TABLET CONNECTION
+    // ======================================
+
+    if (!orderURL) {
+
+        message.textContent =
+            "⚠ Tablet connection unavailable. "
+            + "Please reopen your Sea Serenity tablet.";
+
         return;
     }
 
-    const orderURL =
-        "https://simhost-089225617cd0ff6a4.agni.secondlife.io:12043/cap/6fc75c3f-2fed-749a-b2a6-97c931f87349";
 
-    const message =
-        document.getElementById('message');
+    // ======================================
+    // SECURITY CHECK
+    // ======================================
+
+    if (
+        !orderURL.startsWith(
+            "https://"
+        )
+    ) {
+
+        message.textContent =
+            "⚠ Invalid tablet connection.";
+
+        return;
+    }
+
+
+    // ======================================
+    // SHOW SENDING MESSAGE
+    // ======================================
 
     message.textContent =
         "Sending your order...";
 
+
+    // ======================================
+    // BUILD ORDER
+    // ======================================
+
     const orderText =
-        cart.join(" | ");
+        cart.join(
+            " | "
+        );
 
-    fetch(orderURL, {
 
-        method: "POST",
+    // ======================================
+    // SEND TO SECOND LIFE TABLET
+    // ======================================
 
-        mode: "no-cors",
+    fetch(
+        orderURL,
+        {
 
-        headers: {
-            "Content-Type": "text/plain"
-        },
+            method:
+                "POST",
 
-        body: orderText
+            mode:
+                "no-cors",
 
-    })
+            headers: {
 
-    .then(function() {
+                "Content-Type":
+                    "text/plain"
 
-        message.textContent =
-            "✓ Your order was sent to Sea Serenity!";
+            },
 
-        cart = [];
+            body:
+                orderText
 
-        document
-            .querySelectorAll('.food-button')
-            .forEach(function(button) {
+        }
+    )
 
-                button.classList.remove('selected');
 
-            });
+    // ======================================
+    // ORDER SENT
+    // ======================================
 
-        updateCartCount();
+    .then(
+        function() {
 
-    })
+            message.textContent =
+                "✓ Your order was sent to "
+                + "Sea Serenity!";
 
-    .catch(function(error) {
 
-        message.textContent =
-            "⚠ Order could not be sent. Please contact your server.";
+            // Empty cart after ordering
 
-        console.log(error);
+            cart = [];
 
-    });
+
+            // Remove selected highlights
+
+            document
+                .querySelectorAll(
+                    '.food-button'
+                )
+                .forEach(
+                    function(button) {
+
+                        button
+                            .classList
+                            .remove(
+                                'selected'
+                            );
+
+                    }
+                );
+
+
+            updateCartCount();
+
+        }
+    )
+
+
+    // ======================================
+    // ERROR
+    // ======================================
+
+    .catch(
+        function(error) {
+
+            message.textContent =
+                "⚠ Order could not be sent. "
+                + "Please contact your server.";
+
+
+            console.log(
+                error
+            );
+
+        }
+    );
 }
 
+
+// ==========================================
+// TABLET CONNECTION CHECK
+// ==========================================
+
+window.addEventListener(
+    "load",
+    function() {
+
+        if (!orderURL) {
+
+            console.log(
+                "Sea Serenity menu opened "
+                + "without a tablet receiver."
+            );
+
+        }
+
+        else {
+
+            console.log(
+                "Sea Serenity tablet "
+                + "connected successfully."
+            );
+
+        }
+
+    }
+);
+
+
 </script>
+
 
 </body>
 </html>
