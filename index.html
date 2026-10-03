@@ -410,6 +410,44 @@ function placeOrder() {
     }
 
     const orderURL =
+        "https://simhost-089225617cd0ff6a4.agni.secondlife.io:12043/cap/fa996c2f-3a91-79d7-8328-ae86405fe208";
+
+    const message = document.getElementById('message');
+
+    message.textContent = "Sending your order...";
+
+    const orderText = cart.join(" | ");
+
+    fetch(orderURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain"
+        },
+        body: orderText
+    })
+    .then(function() {
+
+        message.textContent =
+            "✓ Your order was sent to Sea Serenity!";
+
+        cart = [];
+
+        document.querySelectorAll('.food-button')
+        .forEach(function(button) {
+            button.classList.remove('selected');
+        });
+
+        updateCartCount();
+    })
+    .catch(function() {
+
+        message.textContent =
+            "⚠ Order could not be sent. Please contact your server.";
+    });
+}
+
+    const orderURL =
         "const orderURL =
     "https://simhost-089225617cd0ff6a4.agni.secondlife.io:12043/cap/fa996c2f-3a91-79d7-8328-ae86405fe208";
 
