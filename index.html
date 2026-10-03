@@ -409,14 +409,53 @@ function placeOrder() {
         return;
     }
 
-    document.getElementById('message').textContent =
-    'Order ready to send to Sea Serenity staff.';
+    const orderURL =
+        "http://simhost-089225617cd0ff6a4.agni.secondlife.io:12046/cap/154578c7-13dd-b9ea-4421-55d9b38eb453";
 
-    /*
-       NEXT STEP:
-       This button will communicate with the
-       Sea Serenity Second Life order receiver.
-    */
+    const message = document.getElementById('message');
+
+    message.textContent = "Sending your order...";
+
+    const orderData = {
+        items: cart
+    };
+
+    fetch(orderURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(orderData)
+    })
+    .then(function(response) {
+
+        if (!response.ok) {
+            throw new Error("Order could not be sent.");
+        }
+
+        return response.text();
+    })
+    .then(function() {
+
+        message.textContent =
+            "✓ Your order was sent to Sea Serenity!";
+
+        cart = [];
+
+        document.querySelectorAll('.food-button')
+        .forEach(function(button) {
+            button.classList.remove('selected');
+        });
+
+        updateCartCount();
+    })
+    .catch(function(error) {
+
+        message.textContent =
+            "⚠ Order could not be sent. Please contact your server.";
+
+        console.log(error);
+    });
 }
 
 </script>
