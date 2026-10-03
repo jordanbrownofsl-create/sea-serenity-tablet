@@ -7,6 +7,10 @@
 <title>Sea Serenity Steak House</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background: #050505;
@@ -17,48 +21,72 @@ body {
 
 .header {
     background: #000;
-    border-bottom: 4px solid #c99a32;
-    padding: 25px 10px;
+    border-bottom: 3px solid #d9a62e;
+    padding: 18px 10px;
 }
 
 .header h1 {
-    color: #ffffff;
     margin: 0;
-    font-size: 38px;
+    font-size: 34px;
 }
 
 .header p {
-    color: #d6b35a;
-    margin: 8px 0 0;
+    color: #d9a62e;
+    margin: 6px 0 0;
 }
 
-.menu {
-    padding: 25px;
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.page.active {
+    display: block;
 }
 
 button {
     display: block;
     width: 85%;
     max-width: 600px;
-    margin: 15px auto;
-    padding: 22px;
+    margin: 12px auto;
+    padding: 18px;
     background: #111;
     color: white;
-    border: 2px solid #c99a32;
-    border-radius: 12px;
-    font-size: 25px;
+    border: 2px solid #d9a62e;
+    border-radius: 10px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
 }
 
 button:hover {
-    background: #c99a32;
+    background: #d9a62e;
     color: black;
 }
 
-.cart {
-    background: #c99a32;
+.gold {
+    background: #d9a62e;
     color: black;
+}
+
+.back {
+    margin-top: 25px;
+}
+
+h2 {
+    color: #d9a62e;
+    font-size: 28px;
+}
+
+.item {
+    background: #111;
+    border: 1px solid #d9a62e;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 12px auto;
+    width: 85%;
+    max-width: 600px;
+    font-size: 21px;
 }
 
 .footer {
@@ -75,25 +103,170 @@ button:hover {
     <p>Fine Dining • Steak • Cocktails</p>
 </div>
 
-<div class="menu">
 
-    <button>🥐 APPETIZERS</button>
+<!-- HOME PAGE -->
 
-    <button>🥗 SALAD &amp; SOUP</button>
+<div id="home" class="page active">
 
-    <button>🥩 ENTRÉES</button>
+    <button onclick="showPage('appetizers')">
+        🥐 APPETIZERS
+    </button>
 
-    <button>🍰 DESSERTS</button>
+    <button onclick="showPage('salads')">
+        🥗 SALAD &amp; SOUP
+    </button>
 
-    <button>🍸 DRINKS</button>
+    <button onclick="showPage('entrees')">
+        🥩 ENTRÉES
+    </button>
 
-    <button class="cart">🛒 VIEW ORDER</button>
+    <button onclick="showPage('desserts')">
+        🍰 DESSERTS
+    </button>
+
+    <button onclick="showPage('drinks')">
+        🍸 DRINKS
+    </button>
+
+    <button class="gold" onclick="showPage('order')">
+        🛒 VIEW ORDER
+    </button>
 
 </div>
+
+
+<!-- APPETIZERS -->
+
+<div id="appetizers" class="page">
+
+<h2>🥐 APPETIZERS</h2>
+
+<div class="item">Dinner Rolls</div>
+<div class="item">Honey Croissant</div>
+
+<button class="back" onclick="showPage('home')">
+← BACK TO MENU
+</button>
+
+</div>
+
+
+<!-- SALAD AND SOUP -->
+
+<div id="salads" class="page">
+
+<h2>🥗 SALAD &amp; SOUP</h2>
+
+<div class="item">Chicken Salad</div>
+<div class="item">Shrimp Salad</div>
+<div class="item">Steak Salad</div>
+<div class="item">Steak and Potato Soup</div>
+
+<button class="back" onclick="showPage('home')">
+← BACK TO MENU
+</button>
+
+</div>
+
+
+<!-- ENTREES -->
+
+<div id="entrees" class="page">
+
+<h2>🥩 ENTRÉES</h2>
+
+<div class="item">Steak Meal 1</div>
+<div class="item">Steak Meal 2</div>
+<div class="item">Steak Meal 3</div>
+<div class="item">Steak Meal 4</div>
+<div class="item">Steak Meal 5</div>
+<div class="item">Lamb Chops</div>
+
+<button class="back" onclick="showPage('home')">
+← BACK TO MENU
+</button>
+
+</div>
+
+
+<!-- DESSERTS -->
+
+<div id="desserts" class="page">
+
+<h2>🍰 DESSERTS</h2>
+
+<div class="item">Dessert 1</div>
+<div class="item">Dessert 2</div>
+
+<button class="back" onclick="showPage('home')">
+← BACK TO MENU
+</button>
+
+</div>
+
+
+<!-- DRINKS -->
+
+<div id="drinks" class="page">
+
+<h2>🍸 DRINKS</h2>
+
+<div class="item">Cape Cod</div>
+<div class="item">Exotic Roulette</div>
+<div class="item">Horitjo</div>
+<div class="item">Incredible Hulk</div>
+<div class="item">Lemonade</div>
+<div class="item">Long Island</div>
+<div class="item">Old Fashion</div>
+<div class="item">Purple Rain</div>
+<div class="item">Strawberry Lemon Drop</div>
+<div class="item">Sweet Tea</div>
+<div class="item">Water</div>
+<div class="item">Water / Lime</div>
+
+<button class="back" onclick="showPage('home')">
+← BACK TO MENU
+</button>
+
+</div>
+
+
+<!-- ORDER -->
+
+<div id="order" class="page">
+
+<h2>🛒 YOUR ORDER</h2>
+
+<p>Your selected food will appear here.</p>
+
+<button class="back" onclick="showPage('home')">
+← BACK TO MENU
+</button>
+
+</div>
+
 
 <div class="footer">
-    Welcome to Sea Serenity Steak House
+Welcome to Sea Serenity Steak House
 </div>
+
+
+<script>
+
+function showPage(pageName) {
+
+    const pages = document.querySelectorAll('.page');
+
+    pages.forEach(function(page) {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(pageName).classList.add('active');
+
+    window.scrollTo(0, 0);
+}
+
+</script>
 
 </body>
 </html>
